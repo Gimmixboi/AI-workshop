@@ -4,7 +4,7 @@ import pickle
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
-import plotly.graph
+import plotly.figure_factory as px
 
 st.tilte('MY ML Workshop')
 
@@ -57,4 +57,4 @@ with tab2:
                x = x,
                y =  evaluations.loc['XGBoost'])
     ])
-    st.plotly_chart(fig, use_container_width=True)
+  st.plotly_chart(fig, use_container_width=True)
