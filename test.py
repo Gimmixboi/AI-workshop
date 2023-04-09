@@ -6,6 +6,10 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
 
+tab1, tab2,tab3 = st.tabs(["Cat","Dog","Owl"])
+
+with tab1:
+
 model = pickle.load(open('model.penguins.sav','rb'))
 species_encoder = pickle.load(open('encoder.species.sav', 'rb'))
 island_encoder = pickle.load(open('encoder.island.sav', 'rb'))
