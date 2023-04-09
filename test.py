@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 import pickle
@@ -18,7 +17,7 @@ with tab1:
   sex_encoder = pickle.load(open('encoder.sex.sav', 'rb'))
   evaluations = pickle.load(open('evals.all.sav', 'rb'))
 
-  st.title('Penguin Species Predition')
+  st.header('Penguin Species Predition')
 
   x1 = st.radio('Select island',island_encoder.classes_)
   x1 = island_encoder.transform([x1])[0]
@@ -34,3 +33,27 @@ with tab1:
 
   pred = model.predict(x_new)
   st.write('Predicted Species: ' , species_encoder.inverse_transform(pred)[0])
+  
+with tab2:
+  st.header("Evaluations on 5 techiques")
+  evaluations = pickle.load(open('evals.all.sav','rb'))
+  st.dataframe(evaluations)
+  x = evaluations.columns
+    fig = px.Figure(data=[
+        px.Bar(name = 'Decision Tree',
+               x = x,
+               y = evaluations.loc['Decision Tress']),
+        px.Bar(name = 'Random Forest',
+               x = x,
+               y =  evaluations.loc['Random Forest']),
+        px.Bar(name = 'KNN',
+               x = x,
+               y =  evaluations.loc['KNN']),
+        px.Bar(name = 'AdaBoost',
+               x = x,
+               y =  evaluations.loc['AdaBoost']),
+        px.Bar(name = 'XGBoost',
+               x = x,
+               y =  evaluations.loc['XGBoost'])
+    ])
+    st.plotly_chart(fig, use_container_width=True)
