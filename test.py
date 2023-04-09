@@ -4,6 +4,7 @@ import pickle
 from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
+import plotly.graph
 
 st.tilte('MY ML Workshop')
 
