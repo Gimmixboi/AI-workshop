@@ -8,7 +8,7 @@ import plotly.graph_objects as px
 
 st.title('MY ML Workshop')
 
-tab1, tab2,tab3 = st.tabs(["Penguin perdiction","Evaluation","Owl"])
+tab1, tab2,tab3 = st.tabs(["Penguin perdiction","Evaluation","tab3"])
 
 with tab1:
 
