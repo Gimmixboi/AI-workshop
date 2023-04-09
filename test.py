@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
 import plotly.figure_factory as px
 
-st.tilte('MY ML Workshop')
+st.title('MY ML Workshop')
 
 tab1, tab2,tab3 = st.tabs(["Penguin perdiction","Evaluation","Owl"])
 
