@@ -6,9 +6,9 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import streamlit as st
 
-st.tilte("MY ML Workshop")
+st.tilte('MY ML Workshop')
 
-tab1, tab2,tab3 = st.tabs(["Penguin perdiction","Dog","Owl"])
+tab1, tab2,tab3 = st.tabs(["Penguin perdiction","Evaluation","Owl"])
 
 with tab1:
 
